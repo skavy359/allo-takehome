@@ -16,26 +16,21 @@ This is a simple inventory reservation system built for a take-home assignment. 
 ## How to Run Locally
 
 1. Install dependencies:
-bash
 npm install
 
 2. Create a `.env` file in the root directory and add your Postgres database URL:
-bash
 DATABASE_URL="your-postgres-url"
 
 3. Push the database schema:
-bash
-   npx prisma db push
+npx prisma db push
 
 4. Seed the database with sample products and warehouses:
-bash
 npx prisma db seed
 
 5. Run the development server:
-bash
 npm run dev
 
-Open [Live Link](i will deploy it in next step) to view the app.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## Known Limitations / Trade-offs
 To keep the project simple and focused on the core requirements:
