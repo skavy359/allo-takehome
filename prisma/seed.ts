@@ -39,7 +39,7 @@ async function main() {
       data: {
         productId: product.id,
         warehouseId: warehouse1.id,
-        quantity: 100,
+        quantity: 5,
       },
     });
 
@@ -47,7 +47,7 @@ async function main() {
       data: {
         productId: product.id,
         warehouseId: warehouse2.id,
-        quantity: 20,
+        quantity: 10,
       },
     });
   }
