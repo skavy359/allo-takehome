@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function GET() {
+  await prisma.reservation.updateMany({
+    where: { status: "pending", expiresAt: { lt: new Date() } },
+    data: { status: "released" },
+  });
   const products = await prisma.product.findMany({
     include: {
       inventory: {

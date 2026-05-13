@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
+  await prisma.reservation.updateMany({
+    where: { status: "pending", expiresAt: { lt: new Date() } },
+    data: { status: "released" },
+  });
   const body = await req.json();
   const { productId, quantity } = body;
 
